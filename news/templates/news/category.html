@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} {{ category.title }} {% endblock %}
+{% block title %} {{ title }} {% endblock %}
 
 {% block sidebar %}
 {% include 'inc/_sidebar.html'%}
@@ -10,7 +10,7 @@
   {% for item in news %}
   <div class="card mb-3">
     <div class="card-header">
-      Категория: <a href="{% url 'category' item.category.pk %}"> {{ item.category }} </a>
+      Категория: {{ item.category }} 
     </div>
     <div class="row g-0">
       <div class="col-md-4">
@@ -22,7 +22,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ item.title }}</h5>
           <p class="card-text">{{ item.content|safe|linebreaks|truncatewords:50 }}</p>
-          <a href="#" class="btn btn-primary">Read more...</a>
+          <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Read more...</a>
         </div>
       </div>
       <div class="card-footer text-muted">

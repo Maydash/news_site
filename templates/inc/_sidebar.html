@@ -3,6 +3,6 @@
 <div class="list-group">
     {% get_categories as categories %}
     {% for cat in categories %}
-    <a href="{% url 'category' cat.pk %}" class="list-group-item list-group-item-action" aria-current="true">{{ cat.title }}</a>
+    <a href="{{ cat.get_absolute_url }}" class="list-group-item list-group-item-action" aria-current="true">{{ cat.title }}</a>
     {% endfor %}
 </div>

@@ -1,5 +1,5 @@
 # Created by https://www.gitignore.io
-
+media/
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -85,5 +85,32 @@ target/
 __pycache__/
 local_settings.py
 
-.env
+.idea
+idea
+.DS_Store
+
+*.egg-info/
+.installed.cfg
+*.egg
+
+dist
 db.sqlite3
+
+venv
+
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pyc
+*.pyc
+
+!*media/.gitkeep
+media/*
+
+log/debug.log
+
+build
+doc
+home.rst
+make.bat
+Makefile
