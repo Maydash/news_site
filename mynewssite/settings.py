@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
 
     'debug_toolbar',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,16 @@ EMAIL_HOST_USER = 'your@mail.ru'
 EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
+
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'django_cache'),
+        'TIMEOUT': 60,
+        'OPTIONS': {
+        'MAX_ENTRIES': 1000
+        }
+    }
+}
